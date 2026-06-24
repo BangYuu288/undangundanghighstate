@@ -1,0 +1,158 @@
+// Data Configuration
+const OFFENCE_DATA = {
+  A: {
+    title: 'Pasal A - Lalu Lintas',
+    offences: [
+                      { code: 'A01', description: 'Berkendara tidak memiliki SIM', fine: 1000, time: 0, impound: 1 },
+                      { code: 'A02', description: 'Berkendara Secara Ugal - Ugalan', fine: 1200, time: 0, impound: 1 },
+                      { code: 'A03', description: 'Parkir Sembarangan', fine: 1500, time: 0, impound: 1 },
+                      { code: 'A04', description: 'Kendaraan tidak memiliki plat nomor', fine: 1300, time: 0, impound: 1 },
+                      { code: 'A05', description: 'Kabur dari Kecelakaan', fine: 1800, time: 5, impound: 1 },
+                      { code: 'A06', description: 'Kecelakaan hingga menimbulkan korban jiwa', fine: 5000, time: 10, impound: 2 },
+                      { code: 'A07', description: 'Mengemudi Melawan Arus', fine: 1400, time: 0, impound: 0 },
+                      { code: 'A08', description: 'Mengangkut Penumpang Lebih dari Kapasitas', fine: 2000, time: 0, impound: 0 },
+                      { code: 'A09', description: 'Menghindar saat diberhentikan petugas', fine: 1700, time: 10, impound: 1 },
+                      { code: 'A10', description: 'Menabrak Rambu Lalu Lintas', fine: 1200, time: 0, impound: 0 },
+                      { code: 'A11', description: 'Modifikasi Ilegal (Nitro & Knalpot Api)', fine: 1500, time: 0, impound: 1 },
+                      { code: 'A12', description: 'Balap Liar', fine: 4500, time: 15, impound: 2 },
+                      { code: 'A13', description: 'Menerobos barikade kepolisian', fine: 2500, time: 0, impound: 1 },
+                      { code: 'A14', description: 'Mengemudi dalam keadaan mabuk', fine: 2500, time: 5, impound: 2 },
+                      { code: 'A15', description: 'Mengemudi dengan kecepatan berlebihan', fine: 1000, time: 0, impound: 1 },
+                      { code: 'A16', description: 'Tidak memberikan prioritas kepada pejalan kaki', fine: 22000, time: 0, impound: 0 },
+                      { code: 'A17', description: 'Menggunakan ponsel saat mengemudi', fine: 1500, time: 0, impound: 0 },
+                      { code: 'A18', description: 'Tidak menggunakan sabuk pengaman', fine: 1500, time: 0, impound: 0 },
+                      { code: 'A19', description: 'Melanggar lampu lalu lintas', fine: 1500, time: 0, impound: 1 },
+                      { code: 'A20', description: 'Tidak memberikan lampu sen saat berbelok', fine: 1000, time: 0, impound: 0 }
+    ]
+  },
+  B: {
+    title: 'Pasal B - Pelanggaran Umum',
+    offences: [
+                      { code: 'B01', description: 'Kekerasan Ringan', fine: 2500, time: 10, impound: 0 },
+                      { code: 'B02', description: 'Meludah Sembarangan', fine: 1500, time: 5, impound: 0 },
+                      { code: 'B03', description: 'Buang air kecil atau besar sembarangan', fine: 1000, time: 5, impound: 0 },
+                      { code: 'B04', description: 'Mengganggu / menipu petugas saat bertugas', fine: 1600, time: 8, impound: 0 },
+                      { code: 'B05', description: 'Menyebarkan ujaran buruk individu / kelompok', fine: 3000, time: 12, impound: 0 },
+                      { code: 'B06', description: 'Berkelahi ditempat umum', fine: 1750, time: 15, impound: 0 },
+                      { code: 'B07', description: 'Gangguan Ketertiban Umum', fine: 1900, time: 10, impound: 1 },
+                      { code: 'B08', description: 'Pencurian', fine: 3000, time: 18, impound: 1 },
+                      { code: 'B09', description: 'Vandalisme', fine: 2500, time: 13, impound: 0 },
+                      { code: 'B10', description: 'Menggunakan atribut milik instansi secara ilegal', fine: 1750, time: 8, impound: 0 },
+                      { code: 'B11', description: 'Menyamar sebagai petugas instansi untuk keuntungan pribadi', fine: 1800, time: 10, impound: 0 },
+                      { code: 'B12', description: 'Percobaan suap terhadap petugas', fine: 1800, time: 12, impound: 0 },
+                      { code: 'B13', description: 'Memberikan laporan/informasi palsu kepada petugas', fine: 1500, time: 12, impound: 0 },
+                      { code: 'B14', description: 'Memiliki hewan yang dilindungi (hiu & penyu)', fine: 5500, time: 13, impound: 0 },
+                      { code: 'B15', description: 'Memperjualbelikan hewan yang dilindungi', fine: 7000, time: 15, impound: 0 },
+                      { code: 'B16', description: 'Mengumpulkan massa untuk menciptakan kekacauan', fine: 9500, time: 25, impound: 0 },
+                      { code: 'B17', description: 'Ikut dalam kerusuhan yang menyebabkan kerugian', fine: 10000, time: 20, impound: 0 },
+                      { code: 'B18', description: 'Menolak membubarkan diri', fine: 2000, time: 8, impound: 0 },
+                      { code: 'B19', description: 'Melakukan penghakiman secara sepihak', fine: 8500, time: 20, impound: 0 },
+                      { code: 'B20', description: 'Melakukan aktivitas pemburuan tanpa lisensi pemburu', fine: 6500, time: 15, impound: 0 },
+                      { code: 'B21', description: 'Melanggar jam malam', fine: 1100, time: 5, impound: 0 },
+                      { code: 'B22', description: 'Mengganggu ketenteraman umum dengan suara keras', fine: 1150, time: 8, impound: 0 },
+                      { code: 'B23', description: 'Menghina simbol negara atau instansi', fine: 7500, time: 15, impound: 0 },
+                      { code: 'B24', description: 'Menolak perintah sah dari petugas', fine: 8500, time: 10, impound: 0 },
+                      { code: 'B25', description: 'Melakukan tindakan asusila di tempat umum', fine: 9500, time: 12, impound: 0 },
+                      { code: 'B26', description: 'Mencoba melarikan diri', fine: 1900, time: 10, impound: 0 }
+    ]
+  },
+  C: {
+    title: 'Pasal C - Kejahatan Terhadap Properti',
+    offences: [
+                      { code: 'C01', description: 'Memasuki properti pribadi tanpa izin', fine: 1300, time: 10, impound: 0 },
+                      { code: 'C02', description: 'Memasuki properti milik pemerintah tanpa izin', fine: 1500, time: 11, impound: 0 },
+                      { code: 'C03', description: 'Merusak properti pribadi atau milik pemerintah', fine: 3500, time: 15, impound: 0 },
+                      { code: 'C04', description: 'Membakar properti', fine: 3200, time: 25, impound: 0 },
+                      { code: 'C05', description: 'Menjadikan properti sebagai tempat distribusi barang ilegal', fine: 3900, time: 30, impound: 0 },
+                      { code: 'C06', description: 'Membobol properti dengan niat mencuri', fine: 4000, time: 23, impound: 0 },
+                      { code: 'C07', description: 'Graffiti tanpa izin', fine: 3300, time: 8, impound: 0 },
+                      { code: 'C08', description: 'Penempelan poster atau spanduk tanpa izin', fine: 2900, time: 5, impound: 0 },
+                      { code: 'C09', description: 'Mengganggu penggunaan properti bersama', fine: 2700, time: 12, impound: 0 },
+                      { code: 'C10', description: 'Mengubah fungsi properti tanpa izin', fine: 5000, time: 20, impound: 0 }
+  ]
+  },
+  D: {
+    title: 'Pasal D - Narkotika',
+    offences: [
+                      { code: 'D01', description: 'Berada ditempat narkotika', fine: 2000, time: 15, impound: 0 },
+                      { code: 'D02', description: 'Terlibat dalam pembuatan narkotika', fine: 7000, time: 20, impound: 0 },
+                      { code: 'D03', description: 'Menjual atau mendistribusikan narkotika', fine: 8000, time: 30, impound: 0 },
+                      { code: 'D04-1', description: 'Membawa Kanabis [1-10 pcs]', fine: 1000, time: 15, impound: 0 },
+                      { code: 'D04-2', description: 'Membawa Kanabis [11-25 pcs]', fine: 1500, time: 16, impound: 0 },
+                      { code: 'D04-3', description: 'Membawa Kanabis [>25 pcs]', fine: 2500, time: 20, impound: 0 },
+                      { code: 'D05-1', description: 'Membawa Marijuana [1-5 pcs]', fine: 3000, time: 25, impound: 0 },
+                      { code: 'D05-2', description: 'Membawa Marijuana [6-10 pcs]', fine: 3500, time: 30, impound: 0 },
+                      { code: 'D05-3', description: 'Membawa Marijuana [>10 pcs]', fine: 4000, time: 35, impound: 0 },
+                      { code: 'D06', description: 'Menyimpan peralatan untuk konsumsi narkotika', fine: 2200, time: 12, impound: 0 },
+                      { code: 'D07', description: 'Transportasi bahan kimia untuk narkotika', fine: 5500, time: 25, impound: 0 },
+                      { code: 'D08', description: 'Memiliki resep palsu narkotika', fine: 4700, time: 18, impound: 0 },
+                      { code: 'D09', description: 'Pencabutan Kanabis', fine: 2500, time: 15, impound: 0 },
+                      { code: 'D10', description: 'Kepemilikan Srimulat', fine: 1000, time: 10, impound: 0 },
+                      { code: 'D11', description: 'Kepemilikan Sabu', fine: 1000, time: 13, impound: 0 },
+                      { code: 'D12', description: 'Menyimpan Narkotika di bagasi kendaraan', fine: 1500, time: 13, impound: 0 }
+    ]
+  },
+  E: {
+    title: 'Pasal E - Senjata dan barang terlarang',
+    offences: [
+                      { code: 'E01', description: 'Menyalahgunakan senjata tajam / tumpul', fine: 6000, time: 10, impound: 0 },
+                      { code: 'E02-1', description: 'Kepemilikan senjata api ilegal (FIRST CLASS)', fine: 6500, time: 12, impound: 0 },
+                      { code: 'E02-2', description: 'Kepemilikan senjata api ilegal (SECOND CLASS)', fine: 7500, time: 15, impound: 0 },
+                      { code: 'E02-3', description: 'Kepemilikan senjata api ilegal (THIRD CLASS)', fine: 8500, time: 20, impound: 0 },
+                      { code: 'E03', description: 'Kepemilikan kevlar', fine: 2500, time: 10, impound: 0 },
+                      { code: 'E04', description: 'Menyalahgunakan alat penangkis petir', fine: 1000, time: 8, impound: 0 },
+                      { code: 'E05', description: 'Memiliki bahan peledak ilegal', fine: 10000, time: 30, impound: 0 },
+                      { code: 'E06', description: 'Menggunakan senjata untuk menakut-nakuti', fine: 2500, time: 15, impound: 0 },
+                      { code: 'E07', description: 'Kepemilikan Uang Merah (0 > 5,000)', fine: 1500, time: 14, impound: 0 },
+                      { code: 'E08', description: 'Kepemilikan Uang Merah (5,000 > 20,000)', fine: 1800, time: 16, impound: 0 },
+                      { code: 'E09', description: 'Kepemilikan Uang Merah (20,000 > 50,000)', fine: 2500, time: 20, impound: 0 },
+                      { code: 'E10', description: 'Kepemilikan Uang Merah (50,000 > 100,000)', fine: 3000, time: 25, impound: 0 },
+                      { code: 'E11', description: 'Kepemilikan Uang Merah (100,000 > 200,000)', fine: 4000, time: 30, impound: 0 },
+                      { code: 'E12', description: 'Kepemilikan Barang untuk melakukan tidak kriminal', fine: 1500, time: 15, impound: 0 }
+    ]
+  },
+  F: {
+    title: 'Pasal F - Kejahatan & terorisme',
+    offences: [
+                      { code: 'F01', description: 'Pembegalan', fine: 5000, time: 15, impound: 2 },
+                      { code: 'F02', description: 'Perampokan Warung', fine: 5500, time: 17, impound: 2 },
+                      { code: 'F03', description: 'Pencurian Mobil (Car Stealing)', fine: 4000, time: 12, impound: 0 },
+                      { code: 'F04', description: 'Penyerangan kepada instansi yang sedang bertugas', fine: 2600, time: 10, impound: 0 },
+                      { code: 'F05', description: 'Melakukan penyanderaan terhadap warga/instansi', fine: 7000, time: 15, impound: 0 },
+                      { code: 'F06', description: 'Peperangan bersenjata antar kelompok', fine: 7500, time: 25, impound: 0 },
+                      { code: 'F07', description: 'Pencurian dengan kekerasan', fine: 8500, time: 20, impound: 0 },
+                      { code: 'F08', description: 'Perampokan bersenjata', fine: 10000, time: 30, impound: 0 },
+                      { code: 'F09', description: 'Penyerangan terhadap fasilitas penting', fine: 6000, time: 18, impound: 0 },
+                      { code: 'F10', description: 'Pemerasan dengan ancaman', fine: 8500, time: 16, impound: 0 },
+                      { code: 'F11', description: 'Terorisme (Potensi Persidangan)', fine: 10000, time: 30, impound: 0 },
+                      { code: 'F12', description: 'Penyanderaan Massal (Potensi Persidangan)', fine: 10000, time: 30, impound: 0 },
+                      { code: 'F13', description: 'Pembunuhan (Potensi Persidangan)', fine: 10000, time: 30, impound: 0 },
+                      { code: 'F14', description: 'Pengkhianatan terhadap negara (Potensi Persidangan)', fine: 10000, time: 30, impound: 0 },
+                      { code: 'F15', description: 'Perampokan Bank Flecca', fine: 2500, time: 30, impound: 0 },
+                      { code: 'F16', description: 'Penembakan ke warga atau ke kepolisian', fine: 3500, time: 40, impound: 0 }
+  ]
+  },
+  G: {
+    title: 'Pasal G - Kejahatan Finansial & Ekonomi',
+    offences: [
+                      { code: 'G01', description: 'Pencucian uang', fine: 10000, time: 20, impound: 0 },
+                      { code: 'G02', description: 'Penipuan bisnis', fine: 2000, time: 15, impound: 0 },
+                      { code: 'G03', description: 'Pemalsuan dokumen keuangan', fine: 1500, time: 18, impound: 0 },
+                      { code: 'G04', description: 'Penghindaran pajak', fine: 1300, time: 12, impound: 0 },
+                      { code: 'G05', description: 'Perdagangan ilegal', fine: 3400, time: 22, impound: 0 },
+                      { code: 'G06', description: 'Penyelundupan barang', fine: 4500, time: 20, impound: 0 }
+    ]
+  },
+  H: {
+    title: 'Pasal H - Pelanggaran Perilaku Tidak Wajar',
+    offences: [
+                      { code: 'H01', description: 'Perilaku Membahayakan Diri Sendiri', fine: 3000, time: 5, impound: 0 },
+                      { code: 'H02', description: 'Penyalahgunaan Informasi Pribadi Orang Lain', fine: 2000, time: 8, impound: 0 },
+                      { code: 'H03', description: 'Penyerangan Tanpa Motif yang Jelas', fine: 8500, time: 15, impound: 0 },
+                      { code: 'H04', description: 'Penggunaan Kendaraan sebagai Senjata', fine: 9500, time: 12, impound: 1 },
+                      { code: 'H05', description: 'Tindakan Provokatif di Tempat Umum', fine: 5500, time: 3, impound: 0 },
+                      { code: 'H06', description: 'Tindakan Curang atau Tidak Jujur', fine: 4500, time: 18, impound: 0 }
+    ]
+  }
+};
+
